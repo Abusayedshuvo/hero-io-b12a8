@@ -1,6 +1,7 @@
 import googleIcon from "../../assets/google-play.svg";
 import appIcon from "../../assets/app-store.svg";
 import banner from "../../assets/banner.png";
+import { Link } from "react-router";
 
 const Banner = () => {
   return (
@@ -14,14 +15,14 @@ const Banner = () => {
         ideas into digital experiences that truly make an impact.
       </p>
       <div className="flex justify-center gap-4 my-10">
-        <button className="text-[#001931] font-semibold text-xl border border-[#D2D2D2] px-6 py-3 rounded flex gap-2">
+        <Link target="blank" to="https://play.google.com/store/games" className="text-[#001931] font-semibold text-xl border border-[#D2D2D2] px-6 py-3 rounded flex gap-2">
           <img src={googleIcon} alt="" />
           <span>Google Play</span>
-        </button>
-        <button className="text-[#001931] font-semibold text-xl border border-[#D2D2D2] px-6 py-3 rounded flex gap-2">
+        </Link>
+        <Link target="blank" to="https://apps.apple.com/us/iphone/today" className="text-[#001931] font-semibold text-xl border border-[#D2D2D2] px-6 py-3 rounded flex gap-2">
           <img src={appIcon} alt="" />
           <span>App Store</span>
-        </button>
+        </Link>
       </div>
       <img className="mx-auto" src={banner} alt="" />
     </div>

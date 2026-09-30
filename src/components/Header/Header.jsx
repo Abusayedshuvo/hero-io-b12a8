@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import logoImg from "../../assets/logo.png";
 import { FaGithub } from "react-icons/fa";
 
@@ -44,15 +44,19 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">
+        <Link to="/" className=" text-xl">
           <img src={logoImg} alt="" />
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-white">
+        <a
+          target="black"
+          href="https://github.com/Abusayedshuvo"
+          className="btn bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-white"
+        >
           <FaGithub />
           <span> Contribute</span>
         </a>
