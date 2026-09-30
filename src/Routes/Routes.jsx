@@ -16,8 +16,15 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: Home,
-        loader: () => fetch("data.json"),
+        element: (
+          <Suspense
+            fallback={
+              <span className="loading loading-spinner loading-xl"></span>
+            }
+          >
+            <Home allApps={allApps}></Home>
+          </Suspense>
+        ),
       },
       {
         path: "/apps",
