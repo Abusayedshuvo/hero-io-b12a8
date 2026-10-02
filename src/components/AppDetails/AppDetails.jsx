@@ -4,13 +4,14 @@ import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router";
 import { BiSolidLike } from "react-icons/bi";
 import { Bar, BarChart, XAxis, YAxis } from "recharts";
+import { addToStoreDB } from "../../utility/addToDB";
 
 const AppDetails = ({ allApps }) => {
   const { appId } = useParams();
   const data = use(allApps);
 
   const app = data.find((item) => parseInt(item.id) === parseInt(appId));
-  console.log(app);
+
   const {
     image,
     title,
@@ -20,8 +21,12 @@ const AppDetails = ({ allApps }) => {
     reviews,
     size,
     description,
-    ratings,
+    ratings 
   } = app;
+
+  const handleInstall = id => {
+    addToStoreDB(id)
+  }
   return (
     <div className="py-10 container mx-auto">
       <div className="grid grid-cols-12 gap-10">
@@ -58,7 +63,7 @@ const AppDetails = ({ allApps }) => {
               </p>
             </div>
           </div>
-          <button className="bg-[#00D390] px-5 py-3 rounded text-white cursor-pointer">
+          <button onClick={()=>handleInstall(appId)} className="bg-[#00D390] px-5 py-3 rounded text-white cursor-pointer">
             Install Now ( {size} MB)
           </button>
         </div>

@@ -5,6 +5,7 @@ import Apps from "../components/Apps/Apps";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import { Suspense } from "react";
 import AppDetails from "../components/AppDetails/AppDetails";
+import Installation from "../components/Installation/Installation";
 
 const allApps = fetch("/data.json").then((res) => res.json());
 
@@ -50,6 +51,18 @@ export const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "/installation",
+        element: (
+          <Suspense
+            fallback={
+              <span className="loading loading-spinner loading-xl"></span>
+            }
+          >
+            <Installation allApps={allApps}></Installation>
+          </Suspense>
+        ), 
+      }
     ],
   },
 ]);

@@ -11,7 +11,9 @@ const Header = () => {
       <li className="px-4">
         <NavLink to="/apps"> Apps </NavLink>
       </li>
-      <li className="px-4"> Installation </li>
+      <li className="px-4"> 
+          <NavLink to="/installation">  Installation </NavLink>
+        </li>
     </>
   );
 
